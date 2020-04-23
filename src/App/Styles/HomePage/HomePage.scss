@@ -1,0 +1,195 @@
+/* Header */
+
+.home-header-box {
+    width: 100%;
+    height: 450px;
+    background-image: url('../../Assets/sign-in-page.jpg');
+    background-position: center;
+    background-size: cover;
+    // position: absolute;
+    // z-index: 1;
+    opacity: 0.5;
+}
+
+.header-qoutes {
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    z-index: 3;
+    font-size: 3rem;
+    transform: translate(-20%, -50%);
+
+    h4,
+    h5 {
+        color: #2f3640;
+    }
+}
+
+.countdown {
+    display: flex;
+    margin-top: 50px;
+    position: absolute;
+    right: 5%;
+    top: 20%;
+    z-index: 3;
+
+    div {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        background-color: rgba(47, 54, 64, 0.8);
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 500;
+        margin: 0 12px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: rgba(255, 168, 46, 0.8);
+            color: #2f3640;
+            font-size: 1rem;
+            line-height: 35px;
+            font-weight: 300;
+        }
+
+        &#day:before {
+            content: 'Days';
+        }
+
+        &#hour:before {
+            content: 'Hours';
+        }
+
+        &#minute:before {
+            content: 'Minutes';
+        }
+
+        &#second:before {
+            content: 'Seconds';
+        }
+    }
+}
+
+/* body */
+
+.member-card-header {
+    margin: 20px auto;
+    text-align: center;
+    color: #2f3640;
+    background: #fcb857;
+    width: 25%;
+    height: 37px;
+    display: flex;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.premium-card-section {
+    width: 100%;
+    // height: 40%;
+    margin: 16px auto;
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    justify-items: center;
+
+    .premium-card {
+        border: 1px solid #c5c4c4;
+        width: 60%;
+        height: 380px;
+        box-shadow: 2px 2px 2px #eee;
+        transition: transform 0.3s ease-in;
+        transform: scale(1);
+        overflow: hidden;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 4px #eee;
+        }
+
+        .lifetime-premium {
+            transform: rotateZ(-45deg);
+            position: absolute;
+            top: 21px;
+            left: -25px;
+            padding: 1px;
+            width: 42%;
+            text-align: center;
+            background: #fcb857;
+            color: #2f3640;
+        }
+
+        .read-more-button {
+            color: #565d65;
+            background: #fcb857;
+            outline: none;
+            border: 1px solid #fcb857;
+            padding: 10px;
+            margin: 20px;
+            font-size: 1.04rem;
+            cursor: pointer;
+
+            &:hover {
+                color: #fcb857;
+                border: 1px solid #565d65;
+                background-color: #565d65;
+            }
+        }
+
+        .premium-about-text {
+            margin: 20px;
+        }
+
+        &.card-middle {
+            position: relative;
+        }
+
+        &.card-middle::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            background-color: #fcb857;
+            width: 100%;
+            height: 2px;
+        }
+
+    }
+}
+
+
+.cities-section {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    justify-items: center;
+
+    img {
+        transform: scale(1);
+        transition: transform .2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(2px 4px 6px black);
+            -webkit-filter: drop-shadow(2px 4px 6px black);
+        }
+    }
+
+    .section-image-description {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        color: #fff;
+        font-size: 1.2rem;
+        background: #fcb857c2;
+        padding: 8px;
+        font-weight: 400;
+    }
+}

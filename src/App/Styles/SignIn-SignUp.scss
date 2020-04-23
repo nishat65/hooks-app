@@ -1,0 +1,98 @@
+.sign-in {
+    background: #ffa830;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 4px;
+    right: 20%;
+    cursor: pointer;
+    border-radius: 40px;
+
+    h5 {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+        font-size: 1.1rem;
+        font-weight: 400;
+        text-align: center;
+        line-height: 10px;
+
+        .sign-in-link {
+            text-decoration: none;
+            color: #2f3640;
+        }
+    }
+
+    &:hover {
+        background: #2f3640;
+    }
+
+    &:hover h5 .sign-in-link {
+        color: #ffa830;
+    }
+}
+
+.sign-in-card {
+    background: #ffffff;
+    width: 360px;
+    height: 460px;
+    margin: 5rem auto;
+    border: 1px solid #eee;
+    box-shadow: 2px 3px 2px #c5c4c4;
+    // background-image: url('/static/media/sign-in-page.c06c9419.jpg');
+    // background-size: cover;
+
+    h3 {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 2rem
+    }
+}
+
+.sign-up {
+    background: #ffa830;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 4px;
+    right: 28%;
+    cursor: pointer;
+    border-radius: 40px;
+
+    h5 {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+        color: #2f3640;
+        font-size: 1.1rem;
+        font-weight: 400;
+        text-align: center;
+        line-height: 10px;
+    }
+
+    &:hover {
+        background: #2f3640;
+    }
+
+    &:hover h5 {
+        color: #ffa830;
+    }
+}
+
+.sign-up-card {
+    background: #ffffff;
+    width: 360px;
+    height: 460px;
+    margin: 5rem auto;
+    border: 1px solid #eee;
+    box-shadow: 2px 3px 2px #c5c4c4;
+    // background-image: url('/static/media/sign-in-page.c06c9419.jpg');
+    // background-size: cover;
+
+    h3 {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 2rem
+    }
+}
+

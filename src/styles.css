@@ -1,0 +1,69 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+.grid-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.display-button {
+  background: #fd3d3d;
+  border: 1px solid #eee;
+  padding: 10px;
+  font-variant-caps: petite-caps;
+  font-size: 1.5rem;
+  font-family: monospace;
+  margin-top: 7px;
+  outline: none;
+}
+
+.grid {
+  border: 1px solid #eee;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 5px;
+  transition: 0.3s transform ease-in;
+}
+
+.star-grid {
+  background-color: orangered;
+}
+
+.grid:hover {
+  transform: scale(1.6);
+  border: none;
+}
+
+.context-header {
+  font-family: monospace;
+  text-decoration: underline;
+  margin: 0 0 18px 0;
+}
+
+.btn-link {
+  text-decoration: underline;
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  outline: none;
+}
+
+.not-allowed-btn {
+  cursor: not-allowed;
+}
+
+.allowed-btn {
+  cursor: pointer;
+}

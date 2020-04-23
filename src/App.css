@@ -1,0 +1,100 @@
+:root {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  --z-index-var: 2;
+  --margin : 2px;
+  --font: 1rem;
+  --bdr-orange: 1px solid #fcb857;
+  --pad-all: 5px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-absolute-nav {
+  position: absolute;
+  z-index: var(--z-index-var);
+}
+
+.side-drawer-fixed {
+  position: absolute;
+  z-index: 5;
+}
+
+.border-bottom {
+  border: 1px solid #2f3640; 
+}
+
+.border-up {
+  border: 1px solid #2f3640; 
+}
+
+.border {
+  border: 1px solid #2f3640; 
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.margin-ten {
+  margin: calc(var(--margin) * 5);
+}
+
+.margin-twenty {
+  margin: calc(var(--margin) * 10);
+}
+
+.padding-all {
+  padding: calc(var(--pad-all) * 2);
+}
+
+.font-2-rem {
+  font-size: calc(var(--font) * 2);
+}
+
+.font-orange-color {
+  color: #fcb857;
+}
+
+.font-blue-color {
+  color: #2f3640;
+}
+
+.border-orange {
+  border: var(--bdr-orange);
+}
+
+.border-btm-orange {
+  border-bottom: var(--bdr-orange);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import 'styles.css';
