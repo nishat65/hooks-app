@@ -10,9 +10,12 @@ import HomePage from './Components/Home/HomePage'
 const Main = () => {
     return (
         <>
-            {/* <SideBar/> */}
-            <NavBar/>
-            <HomePage/>
+            {/* <Suspense fallback={<p>loading....</p>}>
+
+                <SignInCard />
+            </Suspense> */}
+            <NavBar />
+            <HomePage />
         </>
     );
 }

@@ -59,12 +59,20 @@
   margin: auto;
 }
 
+.margin-five {
+  margin: calc(var(--margin) * 2.5);
+}
+
 .margin-ten {
   margin: calc(var(--margin) * 5);
 }
 
 .margin-twenty {
   margin: calc(var(--margin) * 10);
+}
+
+.margin-top-max {
+  margin-top: calc(var(--margin) * 20);
 }
 
 .padding-all {

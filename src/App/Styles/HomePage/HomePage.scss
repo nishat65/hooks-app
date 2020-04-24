@@ -80,17 +80,19 @@
 /* body */
 
 .member-card-header {
-    margin: 20px auto;
+    margin: 8px auto;
     text-align: center;
     color: #2f3640;
-    background: #fcb857;
     width: 25%;
     height: 37px;
     display: flex;
     font-weight: 400;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+
+    span {
+        margin-left: 15px;
+    }
 }
 
 .premium-card-section {
@@ -191,5 +193,110 @@
         background: #fcb857c2;
         padding: 8px;
         font-weight: 400;
+    }
+}
+
+.food-section {
+    width: 63%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    overflow: hidden;
+    margin: auto;
+
+    .food-joint-section {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-gap: 10px;
+        justify-items: center;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .section-image-description {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        color: #fff;
+        font-size: 0.8rem;
+        background: #fcb857e3;
+        padding: 8px;
+        font-weight: bolder;
+        width: 125px;
+        text-align: center
+    }
+
+    img {
+        filter: contrast(0.5);
+        -webkit-filter: contrast(0.5);
+    }
+
+    .image-display-block {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 15px;
+
+
+        .image-display-btn {
+            background: #ffa50082;
+            padding: 12px;
+            text-align: center;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            font-size: 1.3rem;
+            outline: none;
+            color: #2f3640;
+            cursor: pointer;
+
+            &:disabled {
+                background: #9c9c9c;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.home-page-footer {
+    background: #2f3640;
+    color: white;
+
+    div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .footer-icon li {
+            border-radius: 50%;
+            background: #fcb857;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            margin-right: 15px;
+
+            &:hover {
+                color: #2f3640;
+            }
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+            margin-top: 12px;
+
+            li {
+                padding: 11px;
+
+                &:hover {
+                    color: #fcb857;
+                }
+            }
+        }
+    }
+
+    .footer-copyright {
+        padding: 20px;
+        color: #fcb857;
     }
 }

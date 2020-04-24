@@ -51,14 +51,14 @@ const CountDown = () => {
 
     useEffect(() => {
         let minutesId
-            minutesId = setInterval(() => {
-                    if (seconds === 1) {
-                        setMinutes(prevMinute => prevMinute + 1)
-                    }
-                    else {
-                        setMinutes(m)
-                    }
-            }, 1000)
+        minutesId = setInterval(() => {
+            if (minutes < 59) {
+                setMinutes(prevMinute => prevMinute + 1)
+            }
+            else {
+                setMinutes(m)
+            }
+        }, 60000)
 
         return () => {
             clearInterval(minutesId)
