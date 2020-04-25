@@ -1,4 +1,4 @@
-import React , { useState } from 'react'
+import React, { useState } from 'react'
 
 import SideDrawer from './SideDrawer'
 
@@ -14,18 +14,19 @@ const SideBar = () => {
         setDrawerState(true)
     }
 
-    const onMouseLeaveOpenDrawer = () => {
+    const onMouseLeaveCLoseDrawer = (e) => {
+        console.log(e, 'this is the event');
         setDrawerState(false)
     }
 
-    return ( 
+    return (
         <SideDrawer
             onMouseEnterOpenDrawer={onMouseEnterOpenDrawer}
-            onMouseLeaveOpenDrawer={onMouseLeaveOpenDrawer}
+            onMouseLeaveCLoseDrawer={onMouseLeaveCLoseDrawer}
             onOpenDrawer={onOpenDrawer}
             drawerState={drawerState}
         />
-     );
+    );
 }
- 
+
 export default SideBar;

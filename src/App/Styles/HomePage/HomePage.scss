@@ -25,6 +25,36 @@
     }
 }
 
+.header-qoutes-button {
+    margin-top: 12px;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 58%;
+    transform: translate(-50%, 50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    justify-items: center;
+
+    button {
+        color: #2f3640;
+        background: #ffa830;
+        border: 1px solid #ffa830;
+        padding: 10px;
+        font-size: 1.11rem;
+        outline: none;
+        cursor: pointer;
+        font-weight: 500;
+
+        &:hover {
+            background: #2f3640;
+            color: #ffa830;
+            border: 1px solid #2f3640;
+        }
+    }
+}
+
 .countdown {
     display: flex;
     margin-top: 50px;
@@ -210,6 +240,7 @@
         grid-gap: 10px;
         justify-items: center;
         transition: transform 0.2s ease-in-out;
+        padding: 16px;
     }
 
     .section-image-description {
@@ -254,6 +285,36 @@
                 color: #fff;
             }
         }
+    }
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    justify-items: center;
+    margin: 20px 0 40px 0;
+
+    .testimonials-card {
+        width: 300px;
+        margin: 12px;
+        border: 1px solid #c5c5c5;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .testimonial-text {
+        position: relative;
+        width: 250px;
+        text-align: justify;
     }
 }
 

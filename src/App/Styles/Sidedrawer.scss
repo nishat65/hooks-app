@@ -1,11 +1,11 @@
 .burger-menu-list {
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     right: 0;
     list-style-type: none;
     margin: 5px 5px;
     cursor: pointer;
-    
+
     .list-margin {
         margin: 5px 5px;
     }
@@ -35,19 +35,4 @@
 
 .menu-close {
     transform: translateX(-80%);
-}
-
-.side-drawer-list {
-    display: flex;
-    flex-direction: column;
-    max-width: 250px;
-    width: 250px;
-    background: #ff7c20;
-    height: 100vh;
-
-    .side-drawer-link {
-        color: white;
-        margin: 1rem 1.5rem;
-        font-size: 1.2rem;
-    }
 }

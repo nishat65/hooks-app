@@ -3,26 +3,39 @@ import { NavLink } from 'react-router-dom'
 
 import LinkConfig from './LinksConfig'
 
-const Links = () => {
+const Links = ({ drawerState }) => {
+
+    let iconStyle = !drawerState ? { marginLeft: '60px' } : { marginLeft: '0' }
+
+
     return (
-        <li className="side-drawer-list">
-            <div className="side-profile-card"></div>
-            {
-                LinkConfig.map((linkConfig) => {
-                    return (
-                        <div key={linkConfig.key} className="side-drawer-link">
-                            <i className={linkConfig.class}></i>
-                            <NavLink
-                                activeClassName={linkConfig.activeClassName}
-                                className="link-style"
-                                to={linkConfig.to}
-                            >{linkConfig.link}
-                            </NavLink>
-                        </div>
-                    )
-                })
-            }
-        </li>
+        <>
+            <ul className='link-list'>
+                {
+                    LinkConfig.map((linkConfig) => {
+                        return (
+                            <li
+                                className='padding-all d-flex text-center'
+                                key={linkConfig.key}>
+                                <div>
+                                    <NavLink
+                                        to={linkConfig.to}
+                                    >
+                                        {linkConfig.link}
+
+                                    </NavLink>
+                                </div>
+                                <div><i
+                                    style={iconStyle}
+                                    title={linkConfig.title}
+                                    className={linkConfig.class}
+                                ></i></div>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+        </>
     );
 }
 

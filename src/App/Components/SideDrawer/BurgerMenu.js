@@ -2,7 +2,7 @@ import React from 'react';
 
 const BurgerMenu = ({ onOpenDrawer }) => {
     return (
-        <li className="burger-menu-list " onClick={onOpenDrawer}>
+        <div className="burger-menu-list" onClick={onOpenDrawer}>
             <div className='list-margin'>
                 <div className='burger-menu-icon'></div>
             </div>
@@ -12,7 +12,7 @@ const BurgerMenu = ({ onOpenDrawer }) => {
             <div className='list-margin type-third'>
                 <div className='burger-menu-icon'></div>
             </div>
-        </li>
+        </div>
     );
 }
 

@@ -1,22 +1,31 @@
 import React from 'react'
 
-import MenuList from './MenuList'
+import BurgerMenu from './BurgerMenu'
+import Links from '../../Router/Links'
 
-const SideDrawer = ({ 
+const SideDrawer = ({
     drawerState,
-    onOpenDrawer, 
-    onMouseEnterOpenDrawer, 
-    onMouseLeaveOpenDrawer
- }) => {
+    onOpenDrawer,
+    onMouseLeaveCLoseDrawer,
+    onMouseEnterOpenDrawer
+}) => {
+
+    let drawerMenuState = drawerState ? 'menu-open' : 'menu-close'
+
     return (
         <div
-            onMouseEnter={onMouseEnterOpenDrawer}
-            onMouseLeave = {onMouseLeaveOpenDrawer}
+            // onMouseLeave={onMouseLeaveCLoseDrawer}
+            // onMouseEnter={onMouseEnterOpenDrawer}
+            className={`side-drawer drawer-state-delay ${drawerMenuState}`}
         >
-            <MenuList
-                onOpenDrawer={onOpenDrawer}
-                drawerState={drawerState}
-            />
+            <div>
+                <BurgerMenu onOpenDrawer={onOpenDrawer} />
+            </div>
+            <div className='side-drawer-links'>
+                <Links
+                    drawerState={drawerState}
+                />
+            </div>
         </div>
     )
 }

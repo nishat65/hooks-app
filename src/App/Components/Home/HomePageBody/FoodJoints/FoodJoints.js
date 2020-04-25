@@ -1,4 +1,7 @@
 import React, { useState, Fragment, useCallback } from 'react'
+import Slider from 'react-slick'
+
+import settings from './SliderSettings'
 import images from './FoodJointsImg'
 
 const FoodJoints = () => {

@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 
-// import SideBar from './Components/SideDrawer/SideBar'
+import SideBar from './Components/SideDrawer/SideBar'
 import NavBar from './Components/NavBar/NavBar'
 import Routes from './Router/Routes'
 import { SignInCard, SignUpCard } from './LazyLoad/LazyLoadComponents'
@@ -14,6 +14,7 @@ const Main = () => {
 
                 <SignInCard />
             </Suspense> */}
+            <SideBar />
             <NavBar />
             <HomePage />
         </>

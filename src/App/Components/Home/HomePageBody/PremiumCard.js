@@ -9,7 +9,7 @@ const PremiumCards = () => {
                     &#x24; 50
                    <div className='border-orange margin-ten'></div>
                 </div>
-                <div className='premium-about-text font-blue-color'>
+                <div className='premium-about-text font-blue-color text-justify'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -25,7 +25,7 @@ const PremiumCards = () => {
                     &#x24; 150
                    <div className='border-orange margin-ten'></div>
                 </div>
-                <div className='premium-about-text font-blue-color'>
+                <div className='premium-about-text font-blue-color text-justify'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -41,7 +41,7 @@ const PremiumCards = () => {
                     &#x24; 100
                    <div className='border-orange margin-ten'></div>
                 </div>
-                <div className='premium-about-text font-blue-color'>
+                <div className='premium-about-text font-blue-color text-justify'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco

@@ -18,8 +18,8 @@ const routesConfig = [
         render: () => <div>All cities</div>
     },
     {
-        path: '/carrer',
-        routeKey: '#carrer',
+        path: '/career',
+        routeKey: '#career',
         exact: true,
         render: () => <div>Carrer</div>
     },
