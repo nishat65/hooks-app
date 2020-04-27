@@ -103,17 +103,19 @@
     color: #2f3640;
     padding: 12px;
     align-self: center;
+    transform: translateY(20%);
+    animation: dropdown 0.4s linear;
 }
 
-// @keyframes wiggle {
-//     0% {
-//         transform: translateY(-100%);
-//     }
+@keyframes dropdown {
+    0% {
+        transform: translateY(-100%);
+    }
 
-//     80% {
-//         transform: translateY(20%);
-//     }
-// }
+    100% {
+        transform: translateY(20%);
+    }
+}
 
 /*
 animation shorthand
