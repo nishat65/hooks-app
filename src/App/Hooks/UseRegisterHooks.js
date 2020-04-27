@@ -1,13 +1,13 @@
 import { useState } from "react";
-import isSignInValid from "../Validations/SignInValidations";
+import isSignUpValid from "../Validations/SignUpValidations";
 
-const UseFormHook = (loginData, err) => {
-  const [state, setState] = useState(loginData);
+const useSignInFormHook = (signData, err) => {
+  const [state, setState] = useState(signData);
   const [validData, setValidData] = useState(err);
 
   function onHandleChange(e) {
     e.persist();
-    if (state.email && state.password) {
+    if (state.email && state.password && state.confirmPassword) {
       isNotValidCheck(state);
     }
     setState({ ...state, [e.target.name]: e.target.value });
@@ -15,7 +15,7 @@ const UseFormHook = (loginData, err) => {
 
   function onHandleSubmit(e) {
     e.preventDefault();
-    let { valid } = isSignInValid(state);
+    let { valid } = isSignUpValid(state);
     if (valid) {
       setState({ ...state, [e.target.name]: e.target.value });
       localStorage.setItem("form", JSON.stringify(state));
@@ -23,7 +23,7 @@ const UseFormHook = (loginData, err) => {
   }
 
   function isNotValidCheck(value) {
-    let { error } = isSignInValid(value);
+    let { error } = isSignUpValid(value);
     setValidData(error);
   }
 
@@ -35,4 +35,4 @@ const UseFormHook = (loginData, err) => {
   };
 };
 
-export default UseFormHook;
+export default useSignInFormHook;

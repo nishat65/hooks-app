@@ -108,17 +108,18 @@
         width: 120px;
         transition: all 0.2s ease-in-out;
 
-        &:disabled {
-            background: #eee;
-            color: #525252;
-            border: 1px solid #eee;
-        }
-
         &:hover {
             background: #2f3640;
             color: #ffa830;
             font-weight: 500;
             border: 1px solid #2f3640;
+        }
+
+        &:disabled {
+            background: #eee;
+            color: #525252;
+            border: 1px solid #eee;
+            cursor: not-allowed;
         }
     }
 }
@@ -251,17 +252,19 @@
         width: 120px;
         transition: all 0.2s ease-in-out;
 
-        &:disabled {
-            background: #eee;
-            color: #525252;
-            border: 1px solid #eee;
-        }
-
         &:hover {
             background: #2f3640;
             color: #ffa830;
             font-weight: 500;
             border: 1px solid #2f3640;
         }
+
+        &:disabled {
+            background: #eee;
+            color: #525252;
+            border: 1px solid #eee;
+            cursor: not-allowed;
+        }
+
     }
 }

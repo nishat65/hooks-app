@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <>
       <Suspense fallback={<p>loading....</p>}>
-        <SignInCard />
+        <SignUpCard />
       </Suspense>
       {/* <SideBar /> */}
       {/* <NavBar />
