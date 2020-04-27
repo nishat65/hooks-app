@@ -110,7 +110,7 @@
 /* body */
 
 .member-card-header {
-    margin: 8px auto;
+    margin: auto;
     text-align: center;
     color: #2f3640;
     width: 25%;
@@ -239,8 +239,9 @@
         grid-template-columns: repeat(9, 1fr);
         grid-gap: 10px;
         justify-items: center;
-        transition: transform 0.2s ease-in-out;
+        transition: transform 0.5s linear;
         padding: 16px;
+
     }
 
     .section-image-description {
@@ -260,6 +261,11 @@
     img {
         filter: contrast(0.5);
         -webkit-filter: contrast(0.5);
+
+        &:hover {
+            filter: drop-shadow(2px 4px 6px black);
+            -webkit-filter: drop-shadow(2px 4px 6px black);
+        }
     }
 
     .image-display-block {
