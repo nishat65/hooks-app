@@ -96,3 +96,31 @@
     }
 }
 
+.error-card {
+    background: #ffa830;
+    position: absolute;
+    top: 5px;
+    color: #2f3640;
+    padding: 12px;
+    align-self: center;
+}
+
+// @keyframes wiggle {
+//     0% {
+//         transform: translateY(-100%);
+//     }
+
+//     80% {
+//         transform: translateY(20%);
+//     }
+// }
+
+/*
+animation shorthand
+animation-name: example;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  */

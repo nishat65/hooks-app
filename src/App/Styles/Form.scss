@@ -108,6 +108,12 @@
         width: 120px;
         transition: all 0.2s ease-in-out;
 
+        &:disabled {
+            background: #eee;
+            color: #525252;
+            border: 1px solid #eee;
+        }
+
         &:hover {
             background: #2f3640;
             color: #ffa830;
@@ -117,14 +123,14 @@
     }
 }
 
-.form-card-sign-up{
+.form-card-sign-up {
     margin: 2rem auto;
     width: 300px;
     background: transparent;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
+
     .sign-in-oauth {
         display: flex;
         justify-content: space-evenly;
@@ -244,6 +250,12 @@
         background: #ffa830;
         width: 120px;
         transition: all 0.2s ease-in-out;
+
+        &:disabled {
+            background: #eee;
+            color: #525252;
+            border: 1px solid #eee;
+        }
 
         &:hover {
             background: #2f3640;
