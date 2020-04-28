@@ -59,7 +59,7 @@ const SignUpForm = () => {
           onChange={onHandleChange}
           placeholder="Confirm Password"
         />
-        <i data-confirm-password class="fas fa-lock"></i>
+        <i data-confirm-password className="fas fa-lock"></i>
       </div>
       {validData && validData.confirmPassword && (
         <ErrorForm alert={validData.confirmPassword} />

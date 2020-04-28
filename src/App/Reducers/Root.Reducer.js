@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
-import dataReducer from "./DataReducer/Data.reducer";
+
+import pexelBayReducer from "./AppReducer/PexelBay.Reducer";
 
 export const rootReducer = combineReducers({
-  data: dataReducer,
+  pexelBay: pexelBayReducer,
 });

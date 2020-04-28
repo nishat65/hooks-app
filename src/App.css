@@ -72,6 +72,26 @@
   margin: calc(var(--margin) * 2.5);
 }
 
+.margin-left {
+  margin-left: calc(var(--margin) * 2.5);
+}
+
+.margin-right {
+  margin-right: calc(var(--margin) * 2.5);
+}
+
+.margin-right-twenty {
+  margin-right: calc(var(--margin) * 10);
+}
+
+.margin-bottom-ten {
+  margin-bottom: calc(var(--margin) * 5);
+}
+
+.margin-left-ten {
+  margin-left: calc(var(--margin) * 5);
+}
+
 .margin-ten {
   margin: calc(var(--margin) * 5);
 }
