@@ -1,0 +1,72 @@
+.card-holder {
+    margin: 5% 0;
+    width: 100%;
+
+    .tab-header {
+        text-align: center;
+        background: orange;
+        width: 120px;
+        margin: auto;
+        padding: 12px;
+        color: white;
+    }
+
+    .tab-header-search {
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        input {
+            padding: 12px;
+            background: white;
+            border: 1px solid orange;
+            border-radius: 20px;
+            width: 300px;
+            outline: none;
+        }
+
+        div {
+            transform: translateX(-35px);
+            background: #2f3640;
+            padding: 10px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            color: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-evenly;
+        margin: 20px 0;
+        align-items: center;
+        font-size: 1rem;
+        color: orange;
+        font-weight: bolder;
+
+        li {
+            border: 1px solid orange;
+            padding: 12px;
+            width: 120px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}
+
+.active-class {
+    border: 2px solid orange;
+    padding: 12px;
+    width: 120px;
+    background: orange;
+    color: white;
+    text-align: center;
+    filter: drop-shadow(2px 4px 6px gray);
+}

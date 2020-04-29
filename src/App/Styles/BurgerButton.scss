@@ -25,12 +25,13 @@
   top: 15px;
   left: 12px;
   position: relative;
-  border: 1px solid #ffa830;
+  border: 1px solid #ffffff;
   display: flex;
+  filter: drop-shadow(2px 4px 6px gray);
   flex-direction: column;
   padding: 20px;
   justify-content: space-around;
-  background: #ffa830;
+  background: #ffffff;
   border-radius: 10px;
 
   a {
@@ -52,7 +53,7 @@
     top: -40px;
     left: 4px;
     border-style: solid;
-    border-bottom-color: #ffa830;
+    border-bottom-color: #ffffff;
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;

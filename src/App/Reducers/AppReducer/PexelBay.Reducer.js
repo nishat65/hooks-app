@@ -2,7 +2,9 @@ import Actions from "../Actions/PexelBayActions";
 
 const INITIAL_STATE = {
   data: [],
-  error: false,
+  error: "",
+  isFetching: false,
+  selectedData: [],
 };
 
 const pexelBayReducer = (state = INITIAL_STATE, { payload, type }) => {
@@ -10,6 +12,7 @@ const pexelBayReducer = (state = INITIAL_STATE, { payload, type }) => {
     case Actions.PEXEL_BAY_ACTIONS_GET_DATA:
       return {
         ...state,
+        isFetching: true,
       };
     case Actions.PEXEL_BAY_ACTIONS_GET_DATA_SUCCESS:
       return {
@@ -19,7 +22,24 @@ const pexelBayReducer = (state = INITIAL_STATE, { payload, type }) => {
     case Actions.PEXEL_BAY_ACTIONS_GET_DATA_FAILURE:
       return {
         ...state,
-        error: true,
+        error: payload.error,
+      };
+    case Actions.GET_SELECTED_DATA:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case Actions.GET_SELECTED_DATA_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        selectedData: [...payload.data.hits],
+      };
+    case Actions.GET_SELECTED_DATA_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        error: payload.error,
       };
     default:
       return state;

@@ -1,7 +1,7 @@
 .loader {
     position: relative;
     display: flex;
-    margin: 20rem auto 0 auto
+    margin: 5rem auto 0 auto
 }
 
 .loader span {
@@ -18,41 +18,49 @@
     animation: linearmove 1s linear infinite;
 }
 
-.loader span:last-child{
+.loader span:last-child {
     animation: jumpover 1s ease-in-out infinite;
 }
 
 @keyframes linearmove {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(30px);
-        }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(30px);
+    }
 }
 
 @keyframes jumpover {
     0% {
-        transform: translate(0,0);
+        transform: translate(0, 0);
     }
+
     10% {
-        transform: translate(10px,-10px);
+        transform: translate(10px, -10px);
     }
+
     20% {
-        transform: translate(20px,10px);
+        transform: translate(20px, 10px);
     }
+
     30% {
-        transform: translate(30px,-50px);
+        transform: translate(30px, -50px);
     }
+
     70% {
-        transform: translate(-150px,-50px);
+        transform: translate(-150px, -50px);
     }
+
     80% {
-        transform: translate(-140px,10px);
+        transform: translate(-140px, 10px);
     }
+
     90% {
-        transform: translate(-130px,-10px);
+        transform: translate(-130px, -10px);
     }
+
     100% {
         transform: translate(-120px, 0);
     }

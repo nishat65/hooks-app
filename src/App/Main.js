@@ -15,8 +15,8 @@ const Main = () => {
       </Suspense> */}
       <PexelBay />
       {/* <SideBar /> */}
-      {/* <NavBar />
-      <HomePage /> */}
+      <NavBar />
+      {/* <HomePage /> */}
     </>
   );
 };
