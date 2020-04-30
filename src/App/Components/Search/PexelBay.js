@@ -6,6 +6,7 @@ import {
   pexelBayGetAllData,
   getSelectedData,
 } from "../../Reducers/ActionsCreators/PexelBay/PexelBayActionsCreators";
+import Loading from "../Loading/LazyLoading";
 import Card from "../../Styles/SearchPage/Card";
 import Tab from "./Tab";
 import ImageCard from "../Card/ImageCard";
@@ -24,13 +25,14 @@ const PexelBay = () => {
   const dispatch = useDispatch();
 
   const isFetching = useSelector((state) => state.pexelBay.isFetching);
-  const imageData = useSelector((state) => state.pexelBay.data);
   const selectedData = useSelector((state) => state.pexelBay.selectedData);
 
   function onTabChange(e, index, tab) {
     let cancel;
     const cancelToken = new axios.CancelToken((c) => (cancel = c));
-    dispatch(getSelectedData(tab, cancelToken));
+    dispatch(getSelectedData(tab, cancelToken)).then(() => {
+      return () => cancel();
+    });
     let tabsState = tabs.map((item, i) => {
       return index === i
         ? { ...item, activeClass: "active-class" }
@@ -48,12 +50,11 @@ const PexelBay = () => {
     });
   }
 
-  const dispatchPexelData = useCallback(() => dispatch(pexelBayGetAllData()), [
-    pexelBayGetAllData,
-  ]);
-
   useEffect(() => {
-    dispatchPexelData();
+    let cancel;
+    const cancelToken = new axios.CancelToken((c) => (cancel = c));
+    dispatch(getSelectedData("illustrations", cancelToken));
+    return () => cancel();
   }, []);
 
   return (
@@ -64,6 +65,7 @@ const PexelBay = () => {
         onSearchImagesInput={onSearchImagesInput}
         onTabChange={onTabChange}
       />
+      {isFetching ? <Loading /> : null}
       <Card>
         {selectedData && selectedData.length
           ? selectedData.map((tabData, index) => {
@@ -83,26 +85,7 @@ const PexelBay = () => {
                 />
               );
             })
-          : []}
-        {imageData && imageData.length
-          ? imageData.map((image) => {
-              return (
-                <ImageCard
-                  key={image.id}
-                  src={image.largeImageURL}
-                  downloads={image.downloads}
-                  favorites={image.favorites}
-                  likes={image.likes}
-                  tags={image.tags}
-                  type={image.type}
-                  user={image.user}
-                  userImageURL={image.userImageURL}
-                  width="330px"
-                  height="150px"
-                />
-              );
-            })
-          : []}
+          : !isFetching && <p className="no-result-text">No Results found</p>}
       </Card>
     </div>
   );

@@ -20,6 +20,16 @@
     }
 }
 
+.no-result-text {
+    position: absolute;
+    left: 50%;
+    background: orange;
+    top: 70%;
+    color: white;
+    padding: 12px;
+    transform: translate(-50%, -50%);
+}
+
 .border-image-hr {
     border: 1px solid orange;
     margin: 20px 0px;
