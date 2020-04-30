@@ -6,6 +6,7 @@ import { SignInCard, SignUpCard } from "./LazyLoad/LazyLoadComponents";
 import LazyLoading from "./Components/Loading/LazyLoading";
 import HomePage from "./Components/Home/HomePage";
 import PexelBay from "./Components/Search/PexelBay";
+import CanvasPalette from "./Components/Canvas/CanvasPalette";
 
 const Main = () => {
   return (
@@ -13,9 +14,10 @@ const Main = () => {
       {/* <Suspense fallback={<p>loading....</p>}>
         <SignUpCard />
       </Suspense> */}
-      <PexelBay />
+      {/* <PexelBay /> */}
       {/* <SideBar /> */}
-      <NavBar />
+      {/* <NavBar /> */}
+      <CanvasPalette />
       {/* <HomePage /> */}
     </>
   );
