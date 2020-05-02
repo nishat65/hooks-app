@@ -2,20 +2,17 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-import {
-  pexelBayGetAllData,
-  getSelectedData,
-} from "../../Reducers/ActionsCreators/PexelBay/PexelBayActionsCreators";
+import { getSelectedData } from "../../Reducers/ActionsCreators/PexelBay/PexelBayActionsCreators";
 import Loading from "../Loading/LazyLoading";
 import Card from "../../Styles/SearchPage/Card";
 import Tab from "./Tab";
 import ImageCard from "../Card/ImageCard";
 
 let tabsArray = [
-  { tabName: "Cities", activeClass: "" },
-  { tabName: "Landscape", activeClass: "" },
-  { tabName: "Animals", activeClass: "" },
-  { tabName: "Abstract", activeClass: "" },
+  { tabName: "Cities", activeClass: "", activeSelection: "" },
+  { tabName: "Landscape", activeClass: "", activeSelection: "" },
+  { tabName: "Animals", activeClass: "", activeSelection: "" },
+  { tabName: "Abstract", activeClass: "", activeSelection: "" },
 ];
 
 const PexelBay = () => {
@@ -28,33 +25,33 @@ const PexelBay = () => {
   const selectedData = useSelector((state) => state.pexelBay.selectedData);
 
   function onTabChange(e, index, tab) {
-    let cancel;
-    const cancelToken = new axios.CancelToken((c) => (cancel = c));
-    dispatch(getSelectedData(tab, cancelToken)).then(() => {
-      return () => cancel();
-    });
+    const cancelToken = axios.CancelToken;
+    const source = cancelToken.source();
+    dispatch(getSelectedData(tab, source));
     let tabsState = tabs.map((item, i) => {
       return index === i
-        ? { ...item, activeClass: "active-class" }
-        : { ...item, activeClass: "" };
+        ? {
+            ...item,
+            activeClass: "active-class",
+            activeSelection: "active-selection",
+          }
+        : { ...item, activeClass: "", activeSelection: "" };
     });
     setTabs(tabsState);
   }
 
   function onSearchImagesInput(e) {
-    let cancel;
-    const cancelToken = new axios.CancelToken((c) => (cancel = c));
+    const cancelToken = axios.CancelToken;
+    const source = cancelToken.source();
+    console.log(source.token, "source.token");
     setInputValue(e.target.value);
-    dispatch(getSelectedData(e.target.value, cancelToken)).then((res) => {
-      return () => cancel();
-    });
+    dispatch(getSelectedData(e.target.value, source));
   }
 
   useEffect(() => {
-    let cancel;
-    const cancelToken = new axios.CancelToken((c) => (cancel = c));
-    dispatch(getSelectedData("illustrations", cancelToken));
-    return () => cancel();
+    const cancelToken = axios.CancelToken;
+    const source = cancelToken.source();
+    dispatch(getSelectedData("illustrations", source));
   }, []);
 
   return (
@@ -80,7 +77,7 @@ const PexelBay = () => {
                   type={tabData.type}
                   user={tabData.user}
                   userImageURL={tabData.userImageURL}
-                  width="330px"
+                  width="326px"
                   height="150px"
                 />
               );

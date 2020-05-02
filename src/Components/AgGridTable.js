@@ -3,13 +3,14 @@ import { AgGridReact } from "@ag-grid-community/react";
 import { AllModules } from "@ag-grid-enterprise/all-modules";
 import "@ag-grid-community/all-modules/dist/styles/ag-grid.css";
 import "@ag-grid-community/all-modules/dist/styles/ag-theme-alpine.css";
-import "ag-grid-community/dist/styles/ag-theme-balham.css";
+import "ag-grid-community/dist/styles/ag-theme-balham-dark.css";
 
 const AgGridTable = (props) => {
   let {
     columnDefs,
     defaultColDef,
     rowData,
+    gridOptions,
     onGridReady,
     onCellKeyPress,
     onCellKeyDown,
@@ -24,10 +25,11 @@ const AgGridTable = (props) => {
           height: "100vh",
           width: "100vw",
         }}
-        className="ag-theme-balham"
+        className="ag-theme-balham-dark"
       >
         <AgGridReact
           modules={AllModules}
+          gridOptions={gridOptions}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           rowData={rowData}

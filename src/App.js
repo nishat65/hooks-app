@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
-import AgGridContainer from "./Components/AgGridContainer";
 import Routes from "./App/Router/Routes";
 import Main from "./App/Main";
+import AgGridContainer from "./Components/AgGridContainer";
 import "./App.scss";
 import "./App.css";
 

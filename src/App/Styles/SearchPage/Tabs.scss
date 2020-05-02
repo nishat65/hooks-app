@@ -58,10 +58,12 @@
 
         li {
             border: 1px solid orange;
-            padding: 12px;
-            width: 120px;
-            text-align: center;
+            padding: 8px;
+            width: 140px;
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 }
@@ -74,4 +76,36 @@
     color: white;
     text-align: center;
     filter: drop-shadow(2px 4px 6px gray);
+}
+
+.group-by-selections {
+    width: 10px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        background: orange;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+}
+
+.active-selection {
+    width: 10px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        background: white;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
 }

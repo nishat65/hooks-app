@@ -1,0 +1,27 @@
+#canvas {
+    border: 1px solid orange;
+}
+
+.pagination-button {
+    width: 100px;
+    display: flex;
+
+    .svg-container {
+        width: 100%;
+        background: white;
+
+        svg {
+            fill: orange;
+        }
+    }
+}
+
+.my-cell-class {
+    cursor: pointer;
+
+    &:focus {
+        color: orange;
+        font-size: 0.9rem;
+        background-color: #555555;
+    }
+}

@@ -7,6 +7,12 @@ import { axiosHandler, API_URL, UNDERWORKS_URL } from "../Axios/Axios";
 export default class AgGridContainer extends Component {
   state = {
     colDefs: [],
+    gridOptions: {
+      // rowStyle: {
+      //   background: "#2b2b2b",
+      //   color: "white",
+      // },
+    },
     rowData: [],
     defaultColDef: {},
   };
@@ -34,22 +40,6 @@ export default class AgGridContainer extends Component {
       });
   };
 
-  // componentDidMount() {
-  //     const data = {
-  //       email : 'wayne@underworks.com.au',
-  //       password: 'Und3rw0rk$159!'
-  //     }
-  //     const headers = {CONTENT_TYPE: 'application/json'}
-
-  //     axiosHandler('post', `${UNDERWORKS_URL}auth/login`, headers, data)
-  //     .then(data => {
-  //       return data.data.info
-  //     })
-  //     .catch(err => {
-  //       return err
-  //     })
-  // }
-
   componentDidUpdate(prevProps, prevState) {}
 
   setAgGridData() {
@@ -57,26 +47,53 @@ export default class AgGridContainer extends Component {
       {
         field: "athlete",
         sort: "desc",
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
+        editable: true,
       },
       {
         field: "age",
         width: 90,
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
       },
       {
         headerName: "Country",
         field: "country",
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
       },
       {
         field: "year",
         width: 90,
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
       },
       {
         field: "date",
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
       },
-      { field: "sport" },
-      { field: "gold" },
-      { field: "silver" },
-      { field: "bronze" },
+      {
+        field: "sport",
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
+      },
+      {
+        field: "gold",
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
+      },
+      {
+        field: "silver",
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
+      },
+      {
+        field: "bronze",
+        cellClass: "my-cell-class",
+        cellStyle: { border: "1px solid #8e8e8e" },
+      },
     ];
     const defaultColDef = {
       width: 170,
@@ -86,12 +103,13 @@ export default class AgGridContainer extends Component {
   }
 
   render() {
-    let { colDefs, rowData, defaultColDef } = this.state;
+    let { colDefs, rowData, defaultColDef, gridOptions } = this.state;
     return (
       <div>
         <AgGridTable
           onGridReady={this.onGridReady}
           columnDefs={colDefs}
+          gridOptions={gridOptions}
           defaultColDef={defaultColDef}
           rowData={rowData}
         />

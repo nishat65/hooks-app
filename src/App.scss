@@ -9,3 +9,20 @@
 @import './App/Styles/SideDrawer/SideDrawer.scss';
 @import './App/Styles/SearchPage/PexelBayStyle.scss';
 @import './App/Styles/SearchPage/Tabs.scss';
+@import './App/Styles/Canvas/Canvas.scss';
+
+@import "~ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin";
+
+.ag-theme-alpine {
+    @include ag-theme-alpine(( // use theme parameters where possible
+            alpine-active-color: deeppink));
+
+    .ag-header {
+        // or write CSS selectors to make customisations beyond what the parameters support
+        text-shadow: deeppink;
+    }
+}
+
+.ag-grid-class {
+    color: red;
+}

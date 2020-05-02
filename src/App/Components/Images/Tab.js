@@ -1,6 +1,12 @@
 import React from "react";
 
-const Tabs = ({ tabs, onTabChange, value, onSearchImagesInput }) => {
+const Tabs = ({
+  tabs,
+  onTabChange,
+  value,
+  onDisplayOrderedBy,
+  onSearchImagesInput,
+}) => {
   return (
     <>
       <div className="tab-card">
@@ -19,7 +25,7 @@ const Tabs = ({ tabs, onTabChange, value, onSearchImagesInput }) => {
         </div>
         <ul>
           {tabs.map((tab, index) => {
-            let { tabName, activeClass } = tab;
+            let { tabName, activeClass, activeSelection } = tab;
             return (
               <li
                 className={activeClass}
@@ -27,7 +33,15 @@ const Tabs = ({ tabs, onTabChange, value, onSearchImagesInput }) => {
                 onClick={(e) => onTabChange(e, index, tabName)}
                 data-tab-target={`#${tabName}`}
               >
-                {tabName}
+                <div>{tabName}</div>
+                <div
+                  onClick={onDisplayOrderedBy}
+                  className={`group-by-selections ${activeSelection}`}
+                >
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
               </li>
             );
           })}

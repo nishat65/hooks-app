@@ -5,6 +5,10 @@ const ImageHolderCard = styled.div`
   width: 330px;
   background: white;
   border: 1px solid #c5c5c5;
+
+  &:hover {
+    box-shadow: 1px 1px 2px 1px #bbb;
+  }
 `;
 
 export default ImageHolderCard;
