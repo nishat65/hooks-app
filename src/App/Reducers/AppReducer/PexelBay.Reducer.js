@@ -5,35 +5,23 @@ const INITIAL_STATE = {
   error: "",
   isFetching: false,
   selectedData: [],
+  imageId: [],
 };
 
 const pexelBayReducer = (state = INITIAL_STATE, { payload, type }) => {
   switch (type) {
-    case Actions.PEXEL_BAY_ACTIONS_GET_DATA:
-      return {
-        ...state,
-        isFetching: true,
-      };
-    case Actions.PEXEL_BAY_ACTIONS_GET_DATA_SUCCESS:
-      return {
-        ...state,
-        data: [...payload.data.hits],
-      };
-    case Actions.PEXEL_BAY_ACTIONS_GET_DATA_FAILURE:
-      return {
-        ...state,
-        error: payload.error,
-      };
     case Actions.GET_SELECTED_DATA:
       return {
         ...state,
         isFetching: true,
       };
     case Actions.GET_SELECTED_DATA_SUCCESS:
+      const id = payload.data.hits.map((item) => item.id);
       return {
         ...state,
         isFetching: false,
         selectedData: [...payload.data.hits],
+        imageId: [...id],
       };
     case Actions.GET_SELECTED_DATA_FAILURE:
       return {

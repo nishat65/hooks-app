@@ -11,6 +11,7 @@ const ImageCard = ({
   tags,
   type,
   user,
+  onClickDisplayImage,
   userImageURL,
 }) => {
   const tagsArray = tags.split(",");
@@ -18,7 +19,7 @@ const ImageCard = ({
     return <p key={index} className="hashtags">{`#${tags}`}</p>;
   });
   return (
-    <ImageHolderCard>
+    <ImageHolderCard onClick={onClickDisplayImage}>
       <div className="image-desc">
         <img src={src} width={width} height={height} alt={type} />
         <p className="image-type">{type}</p>

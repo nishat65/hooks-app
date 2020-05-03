@@ -14,10 +14,10 @@ const Main = () => {
       {/* <Suspense fallback={<p>loading....</p>}>
         <SignUpCard />
       </Suspense> */}
-      <PexelBay />
+      {/* <PexelBay /> */}
       {/* <SideBar /> */}
-      <NavBar />
-      {/* <CanvasPalette /> */}
+      {/* <NavBar /> */}
+      <CanvasPalette />
       {/* <HomePage /> */}
     </>
   );

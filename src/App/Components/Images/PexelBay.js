@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import axios from "axios";
 
+import config from "../../../Config";
 import { getSelectedData } from "../../Reducers/ActionsCreators/PexelBay/PexelBayActionsCreators";
 import Loading from "../Loading/LazyLoading";
 import Card from "../../Styles/SearchPage/Card";
@@ -18,11 +20,14 @@ let tabsArray = [
 const PexelBay = () => {
   const [tabs, setTabs] = useState(tabsArray);
   const [inputValue, setInputValue] = useState("");
+  const [singleImage, setSingleImage] = useState([]);
+  const [displayImageModal, setDisplayImageModal] = useState(false);
 
   const dispatch = useDispatch();
 
   const isFetching = useSelector((state) => state.pexelBay.isFetching);
   const selectedData = useSelector((state) => state.pexelBay.selectedData);
+  const imageId = useSelector((state) => state.pexelBay.imageId);
 
   function onTabChange(e, index, tab) {
     const cancelToken = axios.CancelToken;
@@ -54,6 +59,24 @@ const PexelBay = () => {
     dispatch(getSelectedData("illustrations", source));
   }, []);
 
+  function onClickDisplayImage(e, id) {
+    let imageDataId = imageId.find((imageData, index) => {
+      return id === index;
+    });
+    axios
+      .get(`https://pixabay.com/api/?key=${config.pixel_bay}&id=${imageDataId}`)
+      .then((res) => {
+        setSingleImage([...res.data.hits]);
+        setDisplayImageModal(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        setDisplayImageModal(false);
+      });
+  }
+
+  console.log(displayImageModal, "displayImageModal");
+
   return (
     <div className="card-holder">
       <Tab
@@ -79,11 +102,13 @@ const PexelBay = () => {
                   userImageURL={tabData.userImageURL}
                   width="326px"
                   height="150px"
+                  onClickDisplayImage={(e) => onClickDisplayImage(e, index)}
                 />
               );
             })
           : !isFetching && <p className="no-result-text">No Results found</p>}
       </Card>
+      {displayImageModal && <div></div>}
     </div>
   );
 };
